@@ -43,6 +43,10 @@ if (result) {
 		repo: repo,
 		number: pull,
 		body: commentBody
+	}, (err, res) => {
+		if (err) sh.echo(err);
+
+		sh.echo(res);
 	});
 }
 else {
