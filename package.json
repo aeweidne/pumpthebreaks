@@ -1,6 +1,6 @@
 {
   "name": "pumpthebreaks",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Pumps the breaks on GitHub PRs from Travis CI using cracks.",
   "bin": {
     "pump": "./src/pump.js"
