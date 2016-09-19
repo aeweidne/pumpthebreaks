@@ -15,7 +15,7 @@ if (!process.env.TRAVIS_PULL_REQUEST) {
 }
 
 // lets run the dang thing...
-const result = sh.exec('cracks -p "test", "package.json" --silent', {silent: true}).stderr;
+const result = sh.exec('node_modules/.bin/cracks -p "test", "package.json" --silent', {silent: true}).stderr;
 
 if (result) {
 	sh.echo(error('Woah there, looks like the tests aren\'t uh, testing so well.'));
