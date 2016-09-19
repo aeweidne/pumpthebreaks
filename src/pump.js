@@ -38,7 +38,7 @@ if (result) {
 		token: process.env.GH_OAUTH_TOKEN
 	});
 
-	github.pullRequests.createComment({
+	github.issues.createComment({
 		user: user,
 		repo: repo,
 		number: pull,
