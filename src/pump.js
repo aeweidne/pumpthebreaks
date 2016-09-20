@@ -9,7 +9,7 @@ const path = require('path');
 const error = ch.red;
 const success = ch.green;
 
-// // make sure its a PR
+// make sure its a PR
 if (!process.env.TRAVIS_PULL_REQUEST) {
 	sh.echo(error('Not a pull request, not really interested in pumping the breaks at this point.'));
 	return process.exit(1);
@@ -44,10 +44,6 @@ if (result) {
 		repo: repo,
 		number: pull,
 		body: commentBody
-	}, (err, res) => {
-		if (err) sh.echo(err);
-
-		sh.echo(res);
 	});
 }
 else {
