@@ -4,6 +4,7 @@
 const sh = require('shelljs');
 const ch = require('chalk');
 const GH = require('github');
+const path = require('path');
 
 const error = ch.red;
 const success = ch.green;
@@ -15,7 +16,7 @@ if (!process.env.TRAVIS_PULL_REQUEST) {
 }
 
 // lets run the dang thing...
-const result = sh.exec(__dirname + '../node_modules/.bin/cracks -p "test", "package.json" --silent', {silent: true}).stderr;
+const result = sh.exec(`${path.join(__dirname, '..', 'node_modules/.bin/cracks')} -p "test", "package.json" --silent`, {silent: true}).stderr;
 
 if (result) {
 	sh.echo(error('Woah there, looks like the tests aren\'t uh, testing so well.'));
