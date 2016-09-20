@@ -13,3 +13,6 @@ In yo `travis.yml`, as part of your `script`, add:
 ```
 
 and provide [your personal access token for GitHub](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) as an environment variable on Travis CI as `GH_OAUTH_TOKEN` so that `pumpthebreaks` can comment on your PR on your behalf.
+
+You'll wanna put this after your coverage/testing commands so that those
+commands don't _also_ use the old tests.
